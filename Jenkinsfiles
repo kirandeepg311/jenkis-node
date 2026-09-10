@@ -22,12 +22,12 @@ pipeline {
         }
         stage('Check Docker') {
             steps {
-                bat '"C:\Users\HP\AppData\Local\Programs\DockerDesktop\resources\bin\docker.exe" --version'
+                bat '"C:/Users/HP/AppData/Local/Programs/DockerDesktop/resources/bin/docker.exe" --version'
             }
         }
         stage('Build docker Image') {
             steps {
-                bat '"C:\Users\HP\AppData\Local\Programs\DockerDesktop\resources\bin\docker.exe" build -t node-app .'
+                bat '"C:/Users/HP/AppData/Local/Programs/DockerDesktop/resources/bin/docker.exe" build -t node-app .'
             }
         }
          stage('Run docker container') {
