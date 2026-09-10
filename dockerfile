@@ -1,7 +1,7 @@
 FROM  node:18
 
 WORKDIR /index
-COPY package.json.dest ./
+COPY package.json ./
 
 RUN npm install
 
