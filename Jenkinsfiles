@@ -20,5 +20,20 @@ pipeline {
                 bat 'echo Tests passed successfully'
             }
         }
+        stage('Build docker Image') {
+            steps {
+                bat 'docker build -t node-app .'
+            }
+        }
+         stage('Run docker container') {
+            steps {
+                bat 'docker run -d -p 3000:3000 --name node-add-container node-app '
+            }
+         }
+         stage('docker container logs') {
+            steps {
+                bat 'docker logs node-add-container'
+            }
+         }
     }
 }
