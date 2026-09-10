@@ -2,21 +2,19 @@ pipeline {
     agent any
 
     stages {
-        stage('clone') {
-            steps {
-                git ''
-            }
-        }
+
         stage('install') {
             steps {
                 bat 'npm install'
             }
         }
+
         stage('run App') {
             steps {
                 bat 'node index.js'
             }
         }
+
         stage('test') {
             steps {
                 bat 'npm test'
